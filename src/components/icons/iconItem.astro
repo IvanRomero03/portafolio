@@ -1,0 +1,14 @@
+---
+export interface Props {
+  name: string;
+  width?: number;
+  height?: number;
+  fill?: string;
+}
+const { name, width, height, fill } = Astro.props;
+const iconPath = `./icons/${name}.svg`;
+---
+
+<div class="inline-block">
+  <img src={iconPath} width={width} height={height} />
+</div>

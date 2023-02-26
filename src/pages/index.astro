@@ -1,177 +1,279 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Image from '../components/Image.astro';
-import VerticalTabs from '../components/VerticalSmallTabs/verticalTabs';
-import ProjectItem from '../components/ProjectItem.astro';
+import Layout from "../layouts/Layout.astro";
+import Image from "../components/Image.astro";
+import VerticalTabs from "../components/VerticalSmallTabs/verticalTabs";
+import ProjectItem from "../components/ProjectItem.astro";
+import IconItem from "../components/icons/iconItem.astro";
 export interface Props {
   section?: string;
 }
 ---
 
 <Layout title="Ivan's Portafolio">
-	<main class="flex flex-col">
-		<div id="home" class="flex min-h-screen justify-left ml-20 align-middle items-center animate-fade-in-left ">
-			<div class="flex-col max-w-3xl">
-				<div class="flex align-middle items-center">
-					<h1 class="flex text-5xl text-white font-thin">Hi!</h1> <p class="hover:animate-wave text-7xl ">👋</p> <h1 class="flex text-5xl text-white font-thin">I'm Ivan</h1>
-				</div>
-				<h2 class="text-5xl text-slate-500 mb-4">I Create, Learn and Share.</h2>
-				<p class="text-white font-mono text-justify">I'm a Software Engineering Student specializing in Fullstack Development and Computer Vision. I have a diverse range of skills and experience in designing and implementing software solutions. My expertise in Fullstack Development enables me to create robust and scalable applications with both frontend and backend modules, while my proficiency in Computer Vision allows me to design intelligent systems that can analyze and interpret visual data.</p>
-			</div>
-		</div>
-		<div id="about" class="flex min-h-screen justify-left ml-20 align-middle items-center " onscroll="console.log('scrolling');"
-		>
-			<div class="flex-col max-w-3xl">
-				<h1 class="text-5xl text-white font-thin mb-5">About Me</h1>
-				<ul class="ml-7 md:max-w-2xl">
-					<li style={"list-style-type: '📚 '"}>
-						<p class="text-white font-mono"> I'm a Computer Sience Engineering student at Tecnológico de Monterrey.</p>
-					</li>
-					<li style="list-style-type: '🐤 ';">
-						<p class="text-white font-mono">I'm passionate about learning new things and I'm always looking for new challenges.</p>
-					</li>
-					<li style="list-style-type: '🤖 ';">
-						<p class="text-white font-mono">I'm a Software Developer at <a class="hover:underline font-bold font-mono hover:text-white text-green-300" href="https://www.roborregos.com">RoBorregos</a>, currently leading the Web Development and the Human Recognition teams.</p>
-					</li>
-					<li style="list-style-type: '👨‍💻 ';">
-						<p class="text-white font-mono">I'm currently interning at OnCampus Jobs in the Crowd Counting project with the goal of tracking and analyzing the flux of people in public spaces at Tec. de Monterrey.</p>
-					</li>
-					<li style="list-style-type: '🐧 ';">
-						<p class="text-white font-mono">I love nature, exercising and music.</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div id="experience" class="flex min-h-screen justify-left ml-20 align-middle items-center ">
-			<div class="flex-col">
-				<h1 class="text-5xl text-white font-thin mb-5">Experience</h1>
-				<VerticalTabs client:only/>
-			</div>
-		</div>
-		<div id="projects" class="flex min-h-screen ml-20 align-middle items-center min-w-max">
-				<div class="flex flex-col min-w-max">
-					<h1 class="text-5xl text-white font-thin mb-10 justify-self-start">Projects</h1>
-					<div class="flex justify-center justify-self-end m-10 mt-20" >
-						<a href="https://github.com/IvanRomero03">
-							<Image src="https://drive.google.com/uc?id=1BnrtpaAOMd7wgNU3P_cB1d-8_0g4vgzZ" alt="RoboLinks"/>
-						</a>
-						<div class="ml-10 mt-10 flex flex-col max-w-md ">
-							<h1 class="text-3xl text-white font-thin mb-5">RoboLinks</h1>
-							<p class="text-white font-mono my-2 ">URL shortener made for the RoBorregos Team</p>
-							<p class="text-white font-mono my-2 flex-wrap text-justify">It's a simple app to manage, create and find links and resourses to simplify and improve the experience when sharing content</p>
-							<!-- Tech Stack -->
-							<button onclick="window.open('https://rbrgs.com');" class="bg-transparent border-green-300 border-2 hover:border-green-400 hover:text-green-400 hover:bg-green-200 hover:bg-opacity-10 text-green-300 font-bold py-2 px-4 rounded-md my-4">
-								<p>
-									Check it out
-								</p>
-							</button>
-							<div class="flex justify-between text-green-300 mt-4">
-								<p>Next</p>
-								<p>TypeScript</p>
-								<p>React</p>
-								<p>Nodejs</p>
-								<p>MySQL</p>
-							</div>
-						</div>
-					</div>
-					<div class="flex justify-center justify-self-end m-10 mt-20" >
-						<div class="mr-10 mt-10 h-fit text-right flex flex-col max-w-md w-md">
-							<h1 class="text-3xl text-white font-thin mb-5">IoT Warehouse</h1>
-							<p class="text-white font-mono my-5 ">A Warehouse system to manage and track material and inventory of the RoBorregos Development Laboratory.</p>
-							<p class="text-white font-mono my-5">It consist on a simple web interface where the users interact with the inventory and the cells implementation with the RFID Verification system, based on NodeMCUs.</p>
-							<!-- Tech Stack -->
-							<div class="flex justify-between text-green-300">
-								<p>Next</p>
-								<p>TypeScript</p>
-								<p>Arduino</p>
-								<p>Nodejs</p>
-								<p>Socket-io</p>
-							</div>
-						</div>
-						<div class="min-w-max">
-							<Image src="https://drive.google.com/uc?id=1Cch0jPKZ_3NDUHjMDExwLaYMEoUU72R-" alt="IoT WareHouse"/>
-						</div>
-					</div>
-					<div class="flex justify-center justify-self-end m-10 mt-20" >
-						<a href="https://github.com/IvanRomero03">
-							<Image src="https://drive.google.com/uc?id=1BnrtpaAOMd7wgNU3P_cB1d-8_0g4vgzZ" alt="RoboLinks"/>
-						</a>
-						<div class="ml-10 mt-10 flex flex-col max-w-md ">
-							<h1 class="text-3xl text-white font-thin mb-5">@Home Simulation</h1>
-							<p class="text-white font-mono my-2 ">A service and assistive robot being developed by the RoBorregos team. We competed in the Japan IROS 2022 where we achived 5th place.</p>
-							<p class="text-white font-mono my-2 flex-wrap text-justify">I'm in charge of the human analysis department, where we work on face detection, attributes and recognition. As well as human pose estimation and person atributtes.</p>
-							<!-- Tech Stack -->
-							<button onclick="window.open('https://youtu.be/8PyehsxmFc8');" class="bg-transparent border-green-300 border-2 hover:border-green-400 hover:text-green-400 hover:bg-green-200 hover:bg-opacity-10 text-green-300 font-bold py-2 px-4 rounded-md my-4">
-								<p>
-									Watch more about it
-								</p>
-							</button>
-							<div class="flex justify-between text-green-300 mt-4">
-								<p>Python</p>
-								<p>ROS</p>
-								<p>TensorFlow</p>
-								<p>OpenCV</p>
-							</div>
-						</div>
-					</div>
-				</div>
-		</div>
-		<div id="other" class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center ">
-			<h1 class="text-5xl text-white font-thin mb-10 ">Other Projects</h1>
-			<div class="flex flex-wrap max-w-3xl gap-8">
-				<ProjectItem
-					title="RoboLinks"
-					description="URL shortener made for the RoBorregos Team"
-					externalLink="https://rbrgs.com"
-				/>
-				<ProjectItem
-					title="IoT Warehouse"
-					description="A Warehouse system to manage and track material and inventory of the RoBorregos Development Laboratory."
-					externalLink="https://rbrgs.com"
-				/>
-				<ProjectItem
-					title="@Home Simulation"
-					description="A service and assistive robot being developed by the RoBorregos team. We competed in the Japan IROS 2022 where we achived 5th place."
-					externalLink="https://youtu.be/8PyehsxmFc8"
-				/>
+  <main class="flex flex-col">
+    <div
+      id="home"
+      class="flex min-h-screen justify-left ml-20 align-middle items-center animate-fade-in-left"
+    >
+      <div class="flex-col max-w-3xl">
+        <div class="flex align-middle items-center">
+          <h1 class="flex text-5xl text-white font-thin">Hi!</h1>
+          <p class="hover:animate-wave text-7xl">👋</p>
+          <h1 class="flex text-5xl text-white font-thin">I'm Ivan</h1>
+        </div>
+        <h2 class="text-5xl text-slate-500 mb-4">I Create, Learn and Share.</h2>
+        <p class="text-white font-mono text-justify">
+          I'm a Software Engineering Student specializing in Fullstack
+          Development and Computer Vision. I have a diverse range of skills and
+          experience in designing and implementing software solutions. My
+          expertise in Fullstack Development enables me to create robust and
+          scalable applications with both frontend and backend modules, while my
+          proficiency in Computer Vision allows me to design intelligent systems
+          that can analyze and interpret visual data.
+        </p>
+      </div>
+    </div>
+    <div
+      id="about"
+      class="flex min-h-screen justify-left ml-20 align-middle items-center"
+      onscroll="console.log('scrolling');"
+    >
+      <div class="flex-col max-w-3xl">
+        <h1 class="text-5xl text-white font-thin mb-5">About Me</h1>
+        <ul class="ml-7 md:max-w-2xl">
+          <li style="list-style-type: '📚 '">
+            <p class="text-white font-mono">
+              I'm a Computer Sience Engineering student at Tecnológico de
+              Monterrey.
+            </p>
+          </li>
+          <li style="list-style-type: '🐤 ';">
+            <p class="text-white font-mono">
+              I'm passionate about learning new things and I'm always looking
+              for new challenges.
+            </p>
+          </li>
+          <li style="list-style-type: '🤖 ';">
+            <p class="text-white font-mono">
+              I'm a Software Developer at <a
+                class="hover:underline font-bold font-mono hover:text-white text-green-300"
+                href="https://www.roborregos.com">RoBorregos</a
+              >, currently leading the Web Development and the Human Recognition
+              teams.
+            </p>
+          </li>
+          <li style="list-style-type: '👨‍💻 ';">
+            <p class="text-white font-mono">
+              I'm currently interning at OnCampus Jobs in the Crowd Counting
+              project with the goal of tracking and analyzing the flux of people
+              in public spaces at Tec. de Monterrey.
+            </p>
+          </li>
+          <li style="list-style-type: '🐧 ';">
+            <p class="text-white font-mono">
+              I love nature, exercising and music.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      id="experience"
+      class="flex min-h-screen justify-left ml-20 align-middle items-center"
+    >
+      <div class="flex-col">
+        <h1 class="text-5xl text-white font-thin mb-5">Experience</h1>
+        <VerticalTabs client:only />
+      </div>
+    </div>
+    <div
+      id="projects"
+      class="flex min-h-screen ml-20 align-middle items-center min-w-max"
+    >
+      <div class="flex flex-col min-w-max">
+        <h1 class="text-5xl text-white font-thin mb-10 justify-self-start">
+          Projects
+        </h1>
+        <div class="flex justify-center justify-self-end m-10 mt-20">
+          <a href="https://github.com/IvanRomero03">
+            <Image
+              src="https://drive.google.com/uc?id=1BnrtpaAOMd7wgNU3P_cB1d-8_0g4vgzZ"
+              alt="RoboLinks"
+            />
+          </a>
+          <div class="ml-10 mt-10 flex flex-col max-w-md">
+            <h1 class="text-3xl text-white font-thin mb-5">RoboLinks</h1>
+            <p class="text-white font-mono my-2">
+              URL shortener made for the RoBorregos Team
+            </p>
+            <p class="text-white font-mono my-2 flex-wrap text-justify">
+              It's a simple app to manage, create and find links and resourses
+              to simplify and improve the experience when sharing content
+            </p>
+            <!-- Tech Stack -->
+            <button
+              onclick="window.open('https://rbrgs.com');"
+              class="bg-transparent border-green-300 border-2 hover:border-green-400 hover:text-green-400 hover:bg-green-200 hover:bg-opacity-10 text-green-300 font-bold py-2 px-4 rounded-md my-4"
+            >
+              <p>Check it out</p>
+            </button>
+            <div class="flex justify-between text-green-300 mt-4">
+              <p>Next</p>
+              <p>TypeScript</p>
+              <p>React</p>
+              <p>Nodejs</p>
+              <p>MySQL</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center justify-self-end m-10 mt-20">
+          <div class="mr-10 mt-10 h-fit text-right flex flex-col max-w-md w-md">
+            <h1 class="text-3xl text-white font-thin mb-5">IoT Warehouse</h1>
+            <p class="text-white font-mono my-5">
+              A Warehouse system to manage and track material and inventory of
+              the RoBorregos Development Laboratory.
+            </p>
+            <p class="text-white font-mono my-5">
+              It consist on a simple web interface where the users interact with
+              the inventory and the cells implementation with the RFID
+              Verification system, based on NodeMCUs.
+            </p>
+            <!-- Tech Stack -->
+            <div class="flex justify-between text-green-300">
+              <p>Next</p>
+              <p>TypeScript</p>
+              <p>Arduino</p>
+              <p>Nodejs</p>
+              <p>Socket-io</p>
+            </div>
+          </div>
+          <div class="min-w-max">
+            <Image
+              src="https://drive.google.com/uc?id=1Cch0jPKZ_3NDUHjMDExwLaYMEoUU72R-"
+              alt="IoT WareHouse"
+            />
+          </div>
+        </div>
+        <div class="flex justify-center justify-self-end m-10 mt-20">
+          <a href="https://github.com/IvanRomero03">
+            <Image
+              src="https://drive.google.com/uc?id=1BnrtpaAOMd7wgNU3P_cB1d-8_0g4vgzZ"
+              alt="RoboLinks"
+            />
+          </a>
+          <div class="ml-10 mt-10 flex flex-col max-w-md">
+            <h1 class="text-3xl text-white font-thin mb-5">@Home Simulation</h1>
+            <p class="text-white font-mono my-2">
+              A service and assistive robot being developed by the RoBorregos
+              team. We competed in the Japan IROS 2022 where we achived 5th
+              place.
+            </p>
+            <p class="text-white font-mono my-2 flex-wrap text-justify">
+              I'm in charge of the human analysis department, where we work on
+              face detection, attributes and recognition. As well as human pose
+              estimation and person atributtes.
+            </p>
+            <!-- Tech Stack -->
+            <button
+              onclick="window.open('https://youtu.be/8PyehsxmFc8');"
+              class="bg-transparent border-green-300 border-2 hover:border-green-400 hover:text-green-400 hover:bg-green-200 hover:bg-opacity-10 text-green-300 font-bold py-2 px-4 rounded-md my-4"
+            >
+              <p>Watch more about it</p>
+            </button>
+            <div class="flex justify-between text-green-300 mt-4">
+              <p>Python</p>
+              <p>ROS</p>
+              <p>TensorFlow</p>
+              <p>OpenCV</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="other"
+      class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center"
+    >
+      <h1 class="text-5xl text-white font-thin mb-10">Other Projects</h1>
+      <div class="flex flex-wrap max-w-3xl gap-8">
+        <ProjectItem
+          title="RoboLinks"
+          description="URL shortener made for the RoBorregos Team"
+          externalLink="https://rbrgs.com"
+        />
+        <ProjectItem
+          title="IoT Warehouse"
+          description="A Warehouse system to manage and track material and inventory of the RoBorregos Development Laboratory."
+          externalLink="https://rbrgs.com"
+        />
+        <ProjectItem
+          title="@Home Simulation"
+          description="A service and assistive robot being developed by the RoBorregos team. We competed in the Japan IROS 2022 where we achived 5th place."
+          externalLink="https://youtu.be/8PyehsxmFc8"
+        />
+      </div>
+    </div>
+    <div
+      id="contact"
+      class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center"
+    >
+      <h1 class="text-5xl text-white font-thin mb-10">Contact Me</h1>
+      <p class="text-white font-mono my-2 max-w-3xl">
+        If you want to get in touch with me, you can do it through my social
+        media or by sending me an email :)
+      </p>
+      <div class="flex flex-row mt-10 space-x-12 m-10">
+        <a
+          href="https://github.com/IvanRomero03"
+          class="hover:filter hover:sepia"
+        >
+          <IconItem name="github" fill="#DFE6EF" width={40} height={40} />
+        </a>
+        <a
+          href="www.linkedin.com/in/ivanromerow"
+          class="hover:filter hover:sepia"
+        >
+          <IconItem name="linkedin" fill="#DFE6EF" width={40} height={40} />
+        </a>
 
-			</div>
-		</div>
-		<div id="contact" class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center ">
-				<h1 class="text-5xl text-white font-thin mb-10 ">Contact Me</h1>
-				<p class="text-white font-mono my-2 max-w-3xl">
-					If you want to get in touch with me, you can do it through my social media or by sending me an email :)
-				</p>
-				<div class="flex flex-row mt-10">
-					</div>
-					
-				<button class="bg-transparent border-[#5381C5] border-2 hover:border-blue-400 hover:text-blue-400 hover:bg-blue-200 hover:bg-opacity-10 text-blue-300 font-bold py-2 px-4 rounded-md my-4">
-					<a href="resume.pdf" download="IvanRomeroResume.pdf">
-						<p>
-							Resume
-						</p>
-					</a>
-				</button>
-		</div>
-	</main>
+        <a
+          href="https://www.instagram.com/ivanromero.w/"
+          class="hover:filter hover:sepia"
+        >
+          <IconItem name="instagram" fill="#DFE6EF" width={40} height={40} />
+        </a>
+        <a href="mailto:iwells.ar@gmail.com" class="hover:filter hover:sepia">
+          <IconItem name="gmail" fill="#DFE6EF" width={40} height={40} />
+        </a>
+      </div>
+      <button
+        class="bg-transparent border-[#5381C5] border-2 hover:border-blue-400 hover:text-blue-400 hover:bg-blue-200 hover:bg-opacity-10 text-blue-300 font-bold py-2 px-4 rounded-md my-4"
+      >
+        <a href="resume.pdf" download="IvanRomeroResume.pdf">
+          <p>Resume</p>
+        </a>
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const divs = document.querySelectorAll("div[id]");
+    const divsLocation = divs.forEach((div) => {
+      const location = div.getBoundingClientRect();
+    });
+    document.addEventListener("scroll", () => {
+      divs.forEach((div) => {
+        const location = div.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (location.top < windowHeight && location.bottom > 0) {
+          div.classList.add("animate-fade-in-left");
+        }
+      });
+    });
+    divs.forEach((div) => {
+      div.addEventListener("scroll", () => {
+        console.log("scrolling");
+      });
+    });
+  </script>
 </Layout>
-<script>
-	const divs = document.querySelectorAll('div[id]');
-	const divsLocation = divs.forEach((div) => {
-		const location = div.getBoundingClientRect();
-	});
-	document.addEventListener("scroll", () => {
-		divs.forEach((div) => {
-			const location = div.getBoundingClientRect();
-			const windowHeight = window.innerHeight;
-			if(location.top < windowHeight && location.bottom > 0){
-				div.classList.add("animate-fade-in-left");
-			}
-		});
-	});
-	divs.forEach((div) => {
-		div.addEventListener("scroll", () => {
-			console.log("scrolling");
-		});
-	});
-</script>

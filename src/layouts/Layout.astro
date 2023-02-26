@@ -14,10 +14,11 @@ import TopNav from '../components/topnav/topnav';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="Ivan's portafolio" content={Astro.generator} />
+		<link rel="stylesheet" href="src/styles.css" />
 		<title>{title}</title>
 	</head>
 	<TopNav client:only/>
-	<body class="bg-gradient-to-br from-cyan-900  to-purple-900 min-h-screen overscroll-none">
+	<body class="bg-gradient-to-br from-cyan-900  to-purple-900 min-h-screen overscroll-none p-4">
 		<slot />
 	</body>
 </html>

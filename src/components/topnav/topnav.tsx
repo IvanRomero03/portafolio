@@ -18,7 +18,7 @@ const TopNav = () => {
   return (
     <div
       className={
-        "fixed flex justify-end m-5 transition-opacity duration-300 top-0 left-0 right-0 z-50 mx-10 animate-fade-in-down" +
+        "fixed flex justify-end m-5 transition-opacity duration-300 top-0 left-0 right-0 z-50 mx-10 animate-fade-in-down hover:opacity-100" +
         (visible ? " opacity-100" : " opacity-0")
       }
       onScroll={handleScroll}
