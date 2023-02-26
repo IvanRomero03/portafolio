@@ -157,14 +157,12 @@ export interface Props {
 </Layout>
 <script>
 	const divs = document.querySelectorAll('div[id]');
-	console.log(divs);
 	const divsLocation = divs.forEach((div) => {
 		const location = div.getBoundingClientRect();
 	});
 	document.addEventListener("scroll", () => {
 		divs.forEach((div) => {
 			const location = div.getBoundingClientRect();
-			console.log(location);
 			const windowHeight = window.innerHeight;
 			if(location.top < windowHeight && location.bottom > 0){
 				div.classList.add("animate-fade-in-left");
