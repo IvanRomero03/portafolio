@@ -21,3 +21,10 @@ import TopNav from '../components/topnav/topnav';
 		<slot />
 	</body>
 </html>
+<script>
+	import { inject } from '@vercel/analytics'
+	// @ts-ignore: process.env.NODE_ENV is required by @vercel/analytics internally
+	// so that it can determine the correct path for importing the analytics script
+	globalThis.process = { env: { NODE_ENV: import.meta.env.MODE } }
+	inject()
+</script>
