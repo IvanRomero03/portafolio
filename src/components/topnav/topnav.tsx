@@ -31,7 +31,7 @@ const TopNav = () => {
         <Item section="other" title="Other Projects" />
         <Item section="contact" title="Contact Me" />
         <button className="bg-transparent border-[#5381C5] border-2 hover:border-blue-400 hover:text-blue-400 hover:bg-blue-200 hover:bg-opacity-10 text-blue-300 font-bold py-2 px-4 rounded-md my-4">
-          <a href="resume.pdf" download="IvanRomeroResume.pdf">
+          <a href="./resume.pdf" download="IvanRomeroResume.pdf">
             <p>Resume</p>
           </a>
         </button>
