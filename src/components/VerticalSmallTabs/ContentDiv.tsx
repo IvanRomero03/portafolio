@@ -17,7 +17,10 @@ const ContentDiv = ({ Company, Proyects, position, content, techs }: Props) => {
       <p className="text-white text-lg">{content}</p>
       <div className="flex flex-wrap justify-center items-center">
         {techs.map((tech) => (
-          <div className="flex justify-center items-center m-2">
+          <div
+            className="flex justify-center items-center m-2"
+            key={"tech:" + tech}
+          >
             <img src={"https://img.shields.io/badge/" + tech + "-blue"} />
           </div>
         ))}

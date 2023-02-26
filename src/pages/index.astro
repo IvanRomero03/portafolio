@@ -8,7 +8,7 @@ export interface Props {
 }
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Ivan's Portafolio">
 	<main class="flex flex-col">
 		<div id="home" class="flex min-h-screen justify-left ml-20 align-middle items-center animate-fade-in-left ">
 			<div class="flex-col max-w-3xl">
@@ -19,7 +19,8 @@ export interface Props {
 				<p class="text-white font-mono text-justify">I'm a Software Engineering Student specializing in Fullstack Development and Computer Vision. I have a diverse range of skills and experience in designing and implementing software solutions. My expertise in Fullstack Development enables me to create robust and scalable applications with both frontend and backend modules, while my proficiency in Computer Vision allows me to design intelligent systems that can analyze and interpret visual data.</p>
 			</div>
 		</div>
-		<div id="about" class="flex min-h-screen justify-left ml-20 align-middle items-center animate-fade-in-left ">
+		<div id="about" class="flex min-h-screen justify-left ml-20 align-middle items-center " onscroll="console.log('scrolling');"
+		>
 			<div class="flex-col max-w-3xl">
 				<h1 class="text-5xl text-white font-thin mb-5">About Me</h1>
 				<ul class="ml-7 md:max-w-2xl">
@@ -41,13 +42,13 @@ export interface Props {
 				</ul>
 			</div>
 		</div>
-		<div id="experience" class="flex min-h-screen justify-left ml-20 align-middle items-center animate-fade-in-left ">
+		<div id="experience" class="flex min-h-screen justify-left ml-20 align-middle items-center ">
 			<div class="flex-col">
 				<h1 class="text-5xl text-white font-thin mb-5">Experience</h1>
 				<VerticalTabs client:only/>
 			</div>
 		</div>
-		<div id="projects" class="flex min-h-screen ml-20 align-middle items-center animate-fade-in-left min-w-max">
+		<div id="projects" class="flex min-h-screen ml-20 align-middle items-center min-w-max">
 				<div class="flex flex-col min-w-max">
 					<h1 class="text-5xl text-white font-thin mb-10 justify-self-start">Projects</h1>
 					<div class="flex justify-center justify-self-end m-10 mt-20" >
@@ -115,7 +116,7 @@ export interface Props {
 					</div>
 				</div>
 		</div>
-		<div id="other" class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center animate-fade-in-left ">
+		<div id="other" class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center ">
 			<h1 class="text-5xl text-white font-thin mb-10 ">Other Projects</h1>
 			<div class="flex flex-wrap max-w-3xl gap-8">
 				<ProjectItem
@@ -136,7 +137,7 @@ export interface Props {
 
 			</div>
 		</div>
-		<div id="contact" class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center animate-fade-in-left ">
+		<div id="contact" class="flex flex-col min-h-screen justify-center ml-20 align-middle items-center ">
 				<h1 class="text-5xl text-white font-thin mb-10 ">Contact Me</h1>
 				<p class="text-white font-mono my-2 max-w-3xl">
 					If you want to get in touch with me, you can do it through my social media or by sending me an email :)
@@ -154,3 +155,25 @@ export interface Props {
 		</div>
 	</main>
 </Layout>
+<script>
+	const divs = document.querySelectorAll('div[id]');
+	console.log(divs);
+	const divsLocation = divs.forEach((div) => {
+		const location = div.getBoundingClientRect();
+	});
+	document.addEventListener("scroll", () => {
+		divs.forEach((div) => {
+			const location = div.getBoundingClientRect();
+			console.log(location);
+			const windowHeight = window.innerHeight;
+			if(location.top < windowHeight && location.bottom > 0){
+				div.classList.add("animate-fade-in-left");
+			}
+		});
+	});
+	divs.forEach((div) => {
+		div.addEventListener("scroll", () => {
+			console.log("scrolling");
+		});
+	});
+</script>
