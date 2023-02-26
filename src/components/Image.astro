@@ -1,0 +1,11 @@
+---
+export interface Props {
+    src: string;
+    alt: string;
+}
+const {src, alt} = Astro.props;
+---
+
+<div class="shadow-lg rounded-xl max-w-xl ">
+    <img src={src} alt={alt} class="rounded-xl blur hover:blur-none transition-all delay-200" />
+</div>

@@ -1,0 +1,15 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    externalLink?: string;
+}
+
+const { title, description, externalLink } = Astro.props;
+---
+
+<div class="bg-gray-100 p-4 rounded-lg w-80">
+    <h2 class="text-2xl font-bold mb-2">{ title }</h2>
+    <p class="text-gray-500">{ description }</p>
+    {externalLink ? <a href={ externalLink } class="text-blue-500 hover:underline">Learn more</a> : null}
+</div>
