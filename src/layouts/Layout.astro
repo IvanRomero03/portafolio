@@ -1,31 +1,26 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
-import TopNav from '../components/topnav/topnav'; 
+import TopNav from "../components/topnav/topnav";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="Ivan's portafolio" content={Astro.generator} />
-		<link rel="stylesheet" href="src/styles.css" />
-		<title>{title}</title>
-	</head>
-	<TopNav client:only/>
-	<body class="bg-gradient-to-br from-cyan-900  to-purple-900 min-h-screen overscroll-none p-4">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="Ivan's portafolio" content={Astro.generator} />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>{title}</title>
+  </head>
+  <TopNav client:only />
+  <body
+    class="bg-gradient-to-br from-cyan-900 to-purple-900 min-h-screen overscroll-none p-4"
+  >
+    <slot />
+  </body>
 </html>
-<script>
-	import { inject } from '@vercel/analytics'
-	// @ts-ignore: process.env.NODE_ENV is required by @vercel/analytics internally
-	// so that it can determine the correct path for importing the analytics script
-	globalThis.process = { env: { NODE_ENV: import.meta.env.MODE } }
-	inject()
-</script>
